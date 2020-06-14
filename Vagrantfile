@@ -3,6 +3,7 @@
 
 Vagrant.configure("2") do |config|
     config.vm.box = "reddingwebpro/cognacbox"
+    # config.vm.box_version = "2.3"
     config.vm.box_check_update = false
     config.vm.hostname = "cognacbox"
     config.vm.boot_timeout = 1800  # increased to 30 minutes
@@ -17,10 +18,10 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder ".", "/var/www", :mount_options => ["dmode=777", "fmode=777"]
 
     config.vm.provider "virtualbox" do |virtualbox|
-        virtualbox.name = "Cognac Box"
+        virtualbox.name = "Cognac.Box"
         virtualbox.gui = true
         virtualbox.memory = 4096
         virtualbox.cpus = 2
-        virtualbox.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
+        # virtualbox.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
     end
 end
