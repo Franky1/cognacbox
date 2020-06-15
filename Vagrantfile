@@ -3,10 +3,9 @@
 
 Vagrant.configure("2") do |config|
     config.vm.box = "reddingwebpro/cognacbox"
-    # config.vm.box_version = "2.3"
     config.vm.box_check_update = false
     config.vm.hostname = "cognacbox"
-    # config.vm.boot_timeout = 1800  # increased to 30 minutes
+    config.vm.boot_timeout = 600  # increased to 10 minutes
 
     # automatic guest plugin update disabled
     if Vagrant.has_plugin?("vagrant-vbguest")
